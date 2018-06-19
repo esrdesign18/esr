@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>esr.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:esr.WebAPI.SwaggerConfig">
+            <summary>Configure swagger</summary>
+        </member>
+        <member name="M:esr.WebAPI.SwaggerConfig.Register">
+            <summary>Registers swagger configurations</summary>
+        </member>
+        <member name="T:esr.WebAPI.UnityConfig">
+            <summary>Provides the bootstrapping for integrating Unity with WebApi when it is hosted in ASP.NET.</summary>
+        </member>
+        <member name="M:esr.WebAPI.UnityConfig.Start">
+            <summary>Integrates Unity when the application starts.</summary>
+        </member>
+        <member name="M:esr.WebAPI.UnityConfig.Shutdown">
+            <summary>Disposes the Unity container when the application is shut down.</summary>
+        </member>
+        <member name="T:esr.WebAPI.WebApiConfig">
+            <summary>web api congigurations</summary>
+        </member>
+        <member name="M:esr.WebAPI.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>Registers web api configurations</summary>
+            <param name="config">The current configuration</param>
+        </member>
+        <member name="T:esr.WebAPI.Classes.SettingsManager">
+            <summary>Handle settings from config</summary>
+        </member>
+        <member name="T:esr.WebAPI.Controllers.AboutController">
+            <summary>some data about the current service</summary>
+        </member>
+        <member name="M:esr.WebAPI.Controllers.AboutController.About">
+            <summary>Get data about the current api and user</summary>
+        </member>
+        <member name="T:esr.WebAPI.Controllers.AboutController.AboutModel">
+            <summary>Some data about the current api and user</summary>
+        </member>
+        <member name="P:esr.WebAPI.Controllers.AboutController.AboutModel.ClientIP">
+            <summary>client ip.</summary>
+        </member>
+        <member name="P:esr.WebAPI.Controllers.AboutController.AboutModel.ClientUserName">
+            <summary>logon name of the client user.</summary>
+        </member>
+        <member name="P:esr.WebAPI.Controllers.AboutController.AboutModel.APIVersion">
+            <summary>API version. </summary>
+        </member>
+        <member name="P:esr.WebAPI.Controllers.AboutController.AboutModel.Environment">
+            <summary>the environment (DEV/TEST/PROD)</summary>
+        </member>
+        <member name="P:esr.WebAPI.Controllers.AboutController.AboutModel.Server">
+            <summary>server name.</summary>
+        </member>
+        <member name="T:esr.WebAPI.Controllers.LoginController">
+            <summary>handle login</summary>
+        </member>
+        <member name="M:esr.WebAPI.Controllers.LoginController.#ctor(esr.Security.Contracts.ISecurity)">
+            <summary>Initializes a new instance of the <see cref="T:esr.WebAPI.Controllers.LoginController"/> class.</summary>
+        </member>
+        <member name="M:esr.WebAPI.Controllers.LoginController.Login(System.Boolean)">
+            <summary>Logins to the app (specify if as manager).</summary>
+            <param name="isManager">if set to <c>true</c> [is manager].</param>
+        </member>
+        <member name="T:esr.WebAPI.Controllers.PersonController">
+            <summary>Handle Person actions</summary>
+        </member>
+        <member name="M:esr.WebAPI.Controllers.PersonController.#ctor(esr.BL.Contracts.IBL)">
+            <summary>Initializes a new instance of the <see cref="T:esr.WebAPI.Controllers.PersonController"/> class.</summary>
+            <param name="BL">The BL</param>
+        </member>
+        <member name="M:esr.WebAPI.Controllers.PersonController.GetPersons">
+            <summary>get a list of all persons</summary>
+            <returns>all persons</returns>
+        </member>
+        <member name="M:esr.WebAPI.Controllers.PersonController.GetPersonByID(System.Int32)">
+            <summary>get person by ID</summary>
+            <param name="ID">the ID of the person</param>
+            <returns>the person</returns>
+        </member>
+        <member name="M:esr.WebAPI.Controllers.PersonController.GetPersonByName(System.String)">
+            <summary>get person by name</summary>
+            <param name="firstName">the name of the person</param>
+            <returns>the person</returns>
+        </member>
+        <member name="M:esr.WebAPI.Controllers.PersonController.Post(esr.Models.Person)">
+            <summary>Insert a new person</summary>
+            <param name="person">the person</param>
+            <returns>the person</returns>
+        </member>
+        <member name="M:esr.WebAPI.Controllers.PersonController.PutPerson(System.Int32,esr.Models.Person)">
+            <summary>update a given person</summary>
+            <param name="ID">the ID of the person</param>
+            <param name="person">the person</param>
+            <returns>the person</returns>
+        </member>
+        <member name="T:esr.WebAPI.WebApiApplication">
+            <summary>WebAPI Globals</summary>
+            <seealso cref="T:System.Web.HttpApplication" />
+        </member>
+        <member name="M:esr.WebAPI.WebApiApplication.Application_Start">
+            <summary>Applications start</summary>
+        </member>
+        <member name="M:esr.WebAPI.Security.ValidatedAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>check model validity before the action method is invoked.</summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+        <member name="M:esr.WebAPI.Security.AuthenticatedAttribute.AuthenticateAsync(System.Web.Http.Filters.HttpAuthenticationContext,System.Threading.CancellationToken)">
+            <summary>Authenticates the request.</summary>
+            <param name="context">The authentication context.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A Task that will perform authentication.</returns>
+        </member>
+        <member name="M:esr.WebAPI.Security.AuthenticatedAttribute.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>pass the AuthenticationInfo value from the request to the response - if present</summary>
+        </member>
+        <member name="M:esr.WebAPI.Security.Helpers.HttpHeadersHelper.GetUserUniqueID(System.Web.HttpRequest)">
+            <summary>Implement a logic to identify user uniquely</summary>
+        </member>
+        <member name="T:esr.WebAPI.Validators.PersonValidator">
+            <summary></summary>
+        </member>
+        <member name="M:esr.WebAPI.Validators.PersonValidator.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:esr.WebAPI.Validators.PersonValidator"/> class.</summary>
+        </member>
+    </members>
+</doc>

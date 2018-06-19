@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>esr.Models</name>
+    </assembly>
+    <members>
+        <member name="T:esr.Models.Person">
+            <summary>נתוני אדם</summary>
+        </member>
+        <member name="P:esr.Models.Person.ID">
+            <summary>מזהה</summary>
+        </member>
+        <member name="P:esr.Models.Person.FirstName">
+            <summary>שם פרטי</summary>
+        </member>
+        <member name="P:esr.Models.Person.LastName">
+            <summary>שם משפחה</summary>
+        </member>
+        <member name="T:esr.Models.Security.AuthenticationInfo">
+            <summary>The information that the server needs for determining if a user is allowed for a resource</summary>
+        </member>
+        <member name="P:esr.Models.Security.AuthenticationInfo.IsManager">
+            <summary>indicating whether this user has manager access.</summary>
+        </member>
+    </members>
+</doc>
